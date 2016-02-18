@@ -19,7 +19,7 @@ def getImg(html):
     imglist = re.findall(imgre, html)
     x = 0
     for imgurl in imglist:
-        urllib.urlretrieve(imgurl, r'C:\Users\Administrator\Desktop\spider\data\%s.jpg' % x)
+        urllib.urlretrieve(imgurl, r'..\..\data\tieba_img\%s.jpg' % x)
         x += 1
 
 html = getHtml("http://tieba.baidu.com/p/2460150866")
