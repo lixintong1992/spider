@@ -26,7 +26,7 @@ class SpiderMain(object):
             pattern = re.compile(r"/song\?id=(\d+)")
             match = pattern.search(i)
             print match.groups()[0]
-            sql_insert = "INSERT INTO toplist(music_id) VALUES(%s)" % (match.groups()[0])
+            sql_insert = "INSERT INTO toplist_3778678(music_id) VALUES(%s)" % (match.groups()[0])
             try:
                 cursor.execute(sql_insert)
                 conn.commit()
@@ -40,7 +40,7 @@ class SpiderMain(object):
 
 def my_function():
     obj_spider = SpiderMain()
-    root_url = 'http://music.163.com/discover/toplist?id=4395559'
+    root_url = 'http://music.163.com/discover/toplist?id=3778678'
     # data = obj_spider.craw(root_url)
     # root_url = 'http://music.163.com/discover/toplist?id=1899724'
     data = obj_spider.craw(root_url)

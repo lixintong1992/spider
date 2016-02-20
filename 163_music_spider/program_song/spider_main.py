@@ -41,7 +41,7 @@ class SpiderMain(object):
 
 def my_function():
     obj_spider = SpiderMain()
-    root_url = 'http://music.163.com/discover/toplist?id=19723756'
+    root_url = 'http://music.163.com/discover/toplist?id=3778678'
     # data = obj_spider.craw(root_url)
     # root_url = 'http://music.163.com/discover/toplist?id=1899724'
     data = obj_spider.craw(root_url)

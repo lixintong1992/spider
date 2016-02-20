@@ -49,7 +49,7 @@ class HtmlParser(object):
                 res_data['song_artist_name'] = res_data['song_artist_name'] + i.get_text() + '$$'
             res_data['song_artist_id'] = res_data['song_artist_id'][:-2]
         else:
-            res_data['song_artist_id'] = 'None'
+            res_data['song_artist_id'] = 'NULL'
             print 'no artist_id!'
         # artist has no id
         song_artist_noid = soup.find_all('span', class_="s-fc7")
@@ -66,8 +66,8 @@ class HtmlParser(object):
             res_data['song_album_id'] = song_album_id
             res_data['song_album_name'] = song_album_name
         else:
-            res_data['song_album_id'] = 'None'
-            res_data['song_album_name'] = 'None'
+            res_data['song_album_id'] = 'NULL'
+            res_data['song_album_name'] = 'NULL'
             print 'no song_album_id!'
 
         res_data['song_sim_id'] = ''
@@ -80,7 +80,7 @@ class HtmlParser(object):
             res_data['song_sim_id'] = res_data['song_sim_id'][:-2]
             res_data['song_sim_name'] = res_data['song_sim_name'][:-2]
         else:
-            res_data['song_sim_id'] = 'None'
-            res_data['song_sim_name'] = 'None'
+            res_data['song_sim_id'] = 'NULL'
+            res_data['song_sim_name'] = 'NULL'
             print 'no song_sim!'
         return res_data
