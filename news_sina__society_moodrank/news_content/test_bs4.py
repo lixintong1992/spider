@@ -9,8 +9,8 @@ _author__ = 'Lust'
 
 
 def download():
-    url = 'http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=mood_moodnews5&top_time=20160710&top_show_num=6'
-
+    url = 'http://news.sina.com.cn/s/wh/2016-05-11/doc-ifxryhhi8634318.shtml'  # content
+    # url = 'http://comment5.news.sina.com.cn/count/info?key=comos-fxuaiwa6771008'  # comment
     user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64)'
     headers = {'User-Agent': user_agent}
     try:
@@ -22,7 +22,7 @@ def download():
             print e.code
         if hasattr(e, "reason"):
             print e.reason
-    html_content = response.read().decode('utf-8', 'ignore')[10:-2]  # reduce 'var data = ' and '\n', to make json work
+    html_content = response.read().decode('utf-8', 'ignore')
     # html_content = response.read().decode('gbk', 'ignore')
     # html_content = response
     return html_content
@@ -64,4 +64,3 @@ def song_parser(html_content):
 
 if __name__ == '__main__':
     html_content = download()
-    result = json.loads(html_content)
