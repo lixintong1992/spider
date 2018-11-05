@@ -15,3 +15,5 @@ headers = {'User-Agent': user_agent}
 response = request.urlopen(url)
 
 a = response.read()
+b = str(a, encoding = "utf8").encode('utf-8').decode('unicode_escape')
+print(b)
